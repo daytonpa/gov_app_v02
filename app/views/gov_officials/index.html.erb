@@ -1,0 +1,15 @@
+<h1>Main Page:</h1>
+<h3>GovOfficial List</h3>
+<%= link_to "New Government Official", new_gov_official_path %>
+<ul id='gov_official'>
+<% @gov_officials.each do |gov| %>
+	<li>
+		<p><%= link_to gov.name, gov_official_path(gov) %>  (<%= gov.party %>)</p>
+		<p><h4><%= gov.branch %></h4><%= gov.about %></p>
+	</li>
+	<nav>
+  	  	<%= link_to "Edit", edit_gov_official_path(gov) %>
+	</nav>
+<% end %>
+</ul>
+

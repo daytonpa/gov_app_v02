@@ -1,0 +1,5 @@
+<h1><%= @gov_official.name %></h1>
+<h3><%= @gov_official.branch %>  (<%= @gov_official.party %>)</h3>
+<p><%= @gov_official.about %></p>
+<p>
+<%= link_to( "All Officials", root_path ) %> | <%= link_to( "Edit Official", edit_gov_official_path ) %>

@@ -1,0 +1,30 @@
+<%= form_for(@gov_official) do |g| %>
+  <fieldset>
+    <ol>
+      <li class="required">
+        <%= g.label :name %>
+        <%= g.text_field :name, autofocus: true %>
+      </li>
+      <li class="required">
+        <p><%= g.label :about %></p>
+        <%= g.text_area :about, cols: 40, rows: 7 %>
+      </li>
+      <li class="required">
+        <%= g.label :party %>
+        <%= g.select :party, GovOfficial::PARTY, prompt: "Pick one" %>
+      </li>
+      <li class="required">
+        <%= g.label :branch %>
+        <%= g.select :branch, GovOfficial::BRANCHES, prompt: "Pick one" %>
+      </li>
+      <li class="required">
+        <%= g.label :elected %>
+        <%= g.text_field :elected %> (MM-DD-YYYY)
+      </li>
+    </ol>
+    <p>
+      <%= g.submit %>
+      <%= link_to "Cancel", gov_official_path(@gov_official), class: 'button' %>
+    </p>
+  </fieldset>
+<% end %>
